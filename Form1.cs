@@ -6,6 +6,7 @@ namespace ContactApp
     public partial class Form1 : Form
     {
         private readonly ContactDbContext _db = new();
+        private int? _selectedContactId;
         public Form1()
         {
             InitializeComponent();
@@ -80,6 +81,9 @@ namespace ContactApp
                 return;
 
             var row = dgvContacts.Rows[e.RowIndex];
+
+            _selectedContactId =
+                Convert.ToInt32(row.Cells["Id"].Value);
 
             txtFirstName.Text =
                 row.Cells["FirstName"].Value?.ToString() ?? "";
