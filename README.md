@@ -110,6 +110,4 @@ Possible future improvements include:
 * Import contacts from CSV
 * Additional database features
 
-## 👨‍💻 Author
 
-Created as a personal C# and .NET learning project while exploring modern Windows desktop application development.
