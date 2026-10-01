@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -42,8 +43,12 @@
             btnClear = new Button();
             pictureBox1 = new PictureBox();
             dgvContacts = new DataGridView();
+            contactBindingSource = new BindingSource(components);
+            contactDbContextBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvContacts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)contactBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)contactDbContextBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -119,6 +124,7 @@
             btnAdd.TabIndex = 8;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
@@ -163,8 +169,16 @@
             dgvContacts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvContacts.Location = new Point(127, 230);
             dgvContacts.Name = "dgvContacts";
-            dgvContacts.Size = new Size(640, 224);
+            dgvContacts.Size = new Size(542, 224);
             dgvContacts.TabIndex = 13;
+            // 
+            // contactBindingSource
+            // 
+            contactBindingSource.DataSource = typeof(Models.Contact);
+            // 
+            // contactDbContextBindingSource
+            // 
+            contactDbContextBindingSource.DataSource = typeof(Data.ContactDbContext);
             // 
             // Form1
             // 
@@ -190,6 +204,8 @@
             Text = "Contact App";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvContacts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)contactBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)contactDbContextBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,5 +226,7 @@
         private Button btnClear;
         private PictureBox pictureBox1;
         private DataGridView dgvContacts;
+        private BindingSource contactBindingSource;
+        private BindingSource contactDbContextBindingSource;
     }
 }
