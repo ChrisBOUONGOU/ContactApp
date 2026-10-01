@@ -172,6 +172,7 @@
             dgvContacts.Name = "dgvContacts";
             dgvContacts.Size = new Size(542, 224);
             dgvContacts.TabIndex = 13;
+            dgvContacts.CellClick += dgvContacts_CellClick;
             // 
             // contactBindingSource
             // 

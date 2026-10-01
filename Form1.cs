@@ -73,5 +73,25 @@ namespace ContactApp
         {
             ClearFields();
         }
+
+        private void dgvContacts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            var row = dgvContacts.Rows[e.RowIndex];
+
+            txtFirstName.Text =
+                row.Cells["FirstName"].Value?.ToString() ?? "";
+
+            txtLastName.Text =
+                row.Cells["LastName"].Value?.ToString() ?? "";
+
+            txtEmail.Text =
+                row.Cells["Email"].Value?.ToString() ?? "";
+
+            txtPhone.Text =
+                row.Cells["Phone"].Value?.ToString() ?? "";
+        }
     }
 }
