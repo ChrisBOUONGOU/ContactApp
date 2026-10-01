@@ -40,6 +40,8 @@
             btnUpdate = new Button();
             btnDelete = new Button();
             btnClear = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -143,12 +145,24 @@
             btnClear.Text = "New";
             btnClear.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo_hianpe;
+            pictureBox1.Location = new Point(667, 39);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 224, 192);
+            BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -163,6 +177,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Contact App";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +196,6 @@
         private Button btnUpdate;
         private Button btnDelete;
         private Button btnClear;
+        private PictureBox pictureBox1;
     }
 }
