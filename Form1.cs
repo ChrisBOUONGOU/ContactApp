@@ -62,10 +62,14 @@ namespace ContactApp
 
         private void ClearFields()
         {
+            _selectedContactId = null;
+
             txtFirstName.Clear();
             txtLastName.Clear();
             txtEmail.Clear();
             txtPhone.Clear();
+
+            dgvContacts.ClearSelection();
 
             txtFirstName.Focus();
         }
