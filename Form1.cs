@@ -68,5 +68,10 @@ namespace ContactApp
 
             txtFirstName.Focus();
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
     }
 }

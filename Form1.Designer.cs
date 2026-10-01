@@ -152,6 +152,7 @@
             btnClear.TabIndex = 11;
             btnClear.Text = "New";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // pictureBox1
             // 
