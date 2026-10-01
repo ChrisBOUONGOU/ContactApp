@@ -140,5 +140,49 @@ namespace ContactApp
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedContactId == null)
+            {
+                MessageBox.Show(
+                    "Select a contact first.",
+                    "Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                return;
+            }
+
+            var contact = _db.Contacts.Find(
+                _selectedContactId.Value);
+
+            if (contact == null)
+                return;
+
+            var result = MessageBox.Show(
+                $"Do you want to delete {contact.FirstName} {contact.LastName}?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            _db.Contacts.Remove(contact);
+
+            _db.SaveChanges();
+
+            _selectedContactId = null;
+
+            LoadContacts();
+            ClearFields();
+
+            MessageBox.Show(
+                "Contact deleted.",
+                "Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }
