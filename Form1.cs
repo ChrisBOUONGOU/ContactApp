@@ -58,5 +58,15 @@ namespace ContactApp
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+
+        private void ClearFields()
+        {
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtEmail.Clear();
+            txtPhone.Clear();
+
+            txtFirstName.Focus();
+        }
     }
 }
