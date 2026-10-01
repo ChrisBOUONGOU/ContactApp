@@ -41,7 +41,9 @@
             btnDelete = new Button();
             btnClear = new Button();
             pictureBox1 = new PictureBox();
+            dgvContacts = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvContacts).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -156,12 +158,21 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // dgvContacts
+            // 
+            dgvContacts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvContacts.Location = new Point(127, 230);
+            dgvContacts.Name = "dgvContacts";
+            dgvContacts.Size = new Size(640, 224);
+            dgvContacts.TabIndex = 13;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 255, 192);
             ClientSize = new Size(800, 450);
+            Controls.Add(dgvContacts);
             Controls.Add(pictureBox1);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
@@ -178,6 +189,7 @@
             Name = "Form1";
             Text = "Contact App";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvContacts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +209,6 @@
         private Button btnDelete;
         private Button btnClear;
         private PictureBox pictureBox1;
+        private DataGridView dgvContacts;
     }
 }
