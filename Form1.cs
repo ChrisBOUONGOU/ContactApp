@@ -97,5 +97,48 @@ namespace ContactApp
             txtPhone.Text =
                 row.Cells["Phone"].Value?.ToString() ?? "";
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (_selectedContactId == null)
+            {
+                MessageBox.Show(
+                    "Select a contact first.",
+                    "Information",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                return;
+            }
+
+            var contact = _db.Contacts.Find(
+                _selectedContactId.Value);
+
+            if (contact == null)
+            {
+                MessageBox.Show(
+                    "Contact not found.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            contact.FirstName = txtFirstName.Text.Trim();
+            contact.LastName = txtLastName.Text.Trim();
+            contact.Email = txtEmail.Text.Trim();
+            contact.Phone = txtPhone.Text.Trim();
+
+            _db.SaveChanges();
+
+            LoadContacts();
+
+            MessageBox.Show(
+                "Contact modified.",
+                "Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }
